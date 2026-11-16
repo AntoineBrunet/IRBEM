@@ -16,7 +16,7 @@ jobs:
         python-version: ['3.8', '3.9', '3.10']
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
 
     - name: Install gfortran
       run: |
@@ -33,7 +33,7 @@ jobs:
         make OS=linux64 ENV=gfortran64 install
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v7
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -55,10 +55,10 @@ jobs:
         python-version: ['3.8', '3.9', '3.10']
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
 
     - name: Show gfortran version
-      run: gfortran-12 --version
+      run: gfortran-15 --version
 
     - name: Build
       shell: bash
@@ -67,7 +67,7 @@ jobs:
         make OS=osx64 ENV=github install
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v7
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -89,7 +89,7 @@ jobs:
         python-version: ['3.8', '3.9', '3.10']
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
 
     # - uses: msys2/setup-msys2@v2
 
@@ -109,7 +109,7 @@ jobs:
         make OS=win64 ENV=gfortran64 install
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v7
       with:
         python-version: ${{ matrix.python-version }}
 
